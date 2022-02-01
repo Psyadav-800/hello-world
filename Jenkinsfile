@@ -9,8 +9,8 @@ pipeline {
     stages {
         stage('source') {
             steps {
-               git 'https://github.com/sd031/aws_codebuild_codedeploy_nodeJs_demo.git'
-               sh 'cat index.js'
+               git 'https://github.com/Psyadav-800/hello-world.git'
+               
             }
             
         }
@@ -23,8 +23,9 @@ pipeline {
             
             steps {
              echo NODE_ENV
-             withCredentials([string(credentialsId: 'e8f8ff88-49e0-433a-928d-36a518cd30d6', variable: 'secver')]) {
+             withCredentials([string(credentialsId: '22837597-ee52-4c14-8b73-0f5db1121dea', variable: 'secver')]) {
                 // some block
+                }
                 echo secver
             }
                          sh 'npm install'
