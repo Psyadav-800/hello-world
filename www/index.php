@@ -46,7 +46,7 @@
 
 	if($_ENV["DOCKERCLOUD_AUTH"]) {
 		?>
-		<h3>I have Docker Cloud API powers!</h3>
+		<h3>I have Docker Cloud API powers 2!</h3>
 		<?php
 	}
 	?>
