@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('source') {
             steps {
-               git 'https://github.com/Psyadav-800/hello-world.git
+               git 'https://github.com/Psyadav-800/hello-world.git'
                
             }
             
