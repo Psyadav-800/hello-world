@@ -1,24 +1,22 @@
 pipeline {
     agent any
-        environment {
+    environment {
         NODE_ENV='production'
-    }
-    
+        }   
   
     stages {
-        stage('source') {
-            steps {
-               git 'https://github.com/Psyadav-800/hello-world.git'
-               
+            stage('source') {
+                steps {
+                git 'https://github.com/Psyadav-800/hello-world.git'
+                
+                }
+                
             }
-            
-        }
         
-         stage('build') {
-             environment{
-                 NODE_ENV='StagingGitTest'
-             }
-             
+            stage('build') {
+                environment{
+                    NODE_ENV='StagingGitTest'
+            }             
             
             steps {
              echo NODE_ENV
@@ -27,19 +25,18 @@ pipeline {
                 }
                 echo secver
             }
-                         sh 'npm install'
+                sh 'npm install'
             }
             
-        }
         
-         stage('saveArtifact') {
-            steps {
-              archiveArtifacts artifacts: '**', followSymlinks: false
+        
+            stage('saveArtifact') {
+                steps {
+                archiveArtifacts artifacts: '**', followSymlinks: false
+                }
+                
             }
-            
         }
         
-        
-        
-    }
 }
+
