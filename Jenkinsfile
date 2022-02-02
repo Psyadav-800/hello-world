@@ -1,7 +1,6 @@
 pipeline {
     agent any
-    tools {nodejs "node16" }
-    environment {
+        environment {
         NODE_ENV='production'
     }
     
@@ -9,7 +8,7 @@ pipeline {
     stages {
         stage('source') {
             steps {
-               git 'https://github.com/Psyadav-800/hello-world.git'
+               git 'https://github.com/Psyadav-800/hello-world.git
                
             }
             
