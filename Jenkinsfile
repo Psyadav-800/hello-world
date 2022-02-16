@@ -37,7 +37,16 @@ pipeline {
             }
             
         }
-        
+        stage('Build Success Notification') {
+            agent { label "master" }
+            steps {
+                script {
+                    notifyEvents message: 'Build Successfully Done', token: "5CHzh0C9v0PN-jgVEo3ZkRr3zg26HZM4"
+                }
+            }
+        }
+
+
         
         
     }
